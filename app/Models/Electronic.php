@@ -12,11 +12,12 @@ class Electronic extends Model
     protected $fillable =[
         'name', 
         'disc', 
-        'price'
-        ];
+        'price',
+        'image'
+    ];
 
-        public function images()
-        {
-            return $this->hasMany(Image::class);
-        }
+    protected $casts = [
+        'image' => 'array',
+    ];
+
 }

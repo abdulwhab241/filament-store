@@ -12,12 +12,17 @@ class Electric extends Model
     protected $fillable =[
         'name', 
         'disc', 
-        'price'
-        ];
+        'price',
+        'image'
+    ];
+   
+    
+    protected $casts = [
+        'image' => 'array',
+    ];
+   
 
-        public function images()
-        {
-            return $this->hasMany(Image::class);
-        }
+
+    
 
 }

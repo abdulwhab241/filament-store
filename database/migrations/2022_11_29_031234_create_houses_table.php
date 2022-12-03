@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table ->foreignId('image_id') -> constrained() ->cascadeOnDelete();
+            $table->json('image');
             $table->longText('disc');
             $table->decimal('price',$total = 9,$places = 2);
             $table->timestamps();

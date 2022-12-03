@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Electric;
+use Illuminate\Support\Str;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
@@ -38,7 +39,7 @@ class ElectricResource extends Resource
                     FileUpload::make('image')
                     ->multiple()
                     ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
-                        return (string) str($file->getClientOriginalName())->prepend('public/images/electric/');
+                        return "images/electric/".Str::random(15).".".$file->getClientOriginalExtension();
                     }),
                     Textarea::make('disc'),
                     TextInput::make('price')
@@ -50,9 +51,8 @@ class ElectricResource extends Resource
     {
         return $table
             ->columns([
-                    TextColumn::make('id') -> sortable(),
+
                     TextColumn::make('name') -> searchable(),
-                    ImageColumn::make('image')->square(),
                     TextColumn::make('disc')->limit(1000000),
                     TextColumn::make('price')->money('YER'),
                     TextColumn::make('created_at')->dateTime()

@@ -43,10 +43,16 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL').'/uploads',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'electric' => [
             'driver' => 'local',
-            'root' => base_path() . 'public/images/electric/',
+            'root' => base_path() . 'public/uploads/images/electric/',
             'url' => env( key:'APP_URL').'/public',
             'visibility' => 'public',
             'throw' => false,

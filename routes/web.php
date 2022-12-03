@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ElectricController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaticController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [StaticController::class, 'index']) -> name('home.index');
+Route::get('/call', [StaticController::class, 'call']) -> name('home.call');
+Route::resource('electrics', ElectricController::class);
+/*
+Route::get('/electric', [StaticController::class, 'electric']) -> name('home.electric');
+Route::get('/electronic', [StaticController::class, 'electronic']) -> name('home.electronic');
+Route::get('/house', [StaticController::class, 'house']) -> name('home.house');
+Route::get('/medical', [StaticController::class, 'medical']) -> name('home.medical');
+Route::get('/modern', [StaticController::class, 'modern']) -> name('home.modern');
+*/
+
+
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+
+Route::get('/hash', function () {
+    return bcrypt('admin');
 });
 
 Route::get('/dashboard', function () {

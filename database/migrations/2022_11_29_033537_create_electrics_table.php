@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('electrics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table ->foreignId('image_id') -> constrained() ->cascadeOnDelete();
+            $table->json('image')->nullable();
             $table->longText('disc');
-            $table->decimal('price',$total = 9,$places = 2);
+            $table->decimal('price',50,2);
             $table->timestamps();
         });
     }
