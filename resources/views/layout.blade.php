@@ -41,10 +41,10 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">المتجر</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="#"> الالكترونيات ⌚</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('electronics.index') }}"> الالكترونيات ⌚</a></li>
                   <li class="nav-item"><a class="nav-link" href="{{ route('electrics.index') }}">الكهربائيات ⚡</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#"> الادوات المنزلية 🏠</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#"> الطبية 🏥</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('houses.index') }}"> الادوات المنزلية 🏠</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('medicals.index') }}"> الطبية 🏥</a></li>
                   <li class="nav-item"><a class="nav-link" href="#"> الجديد🤩 </a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Shopping Cart</a></li>
                 </ul>

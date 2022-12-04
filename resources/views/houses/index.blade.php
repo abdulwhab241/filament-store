@@ -1,16 +1,16 @@
 @extends('layout')
-@section('title', ' الكهربائيات')
+@section('title', ' الادوات المنزلية')
 @section('Page')
 <link rel="stylesheet" href="css/Elec.css">
     <section class="blog-banner-area" id="contact">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>الكهربائيات</h1>
+					<h1>الادوات المنزلية</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{ route('home.index') }}">الرئيسية</a></li>
-              <li class="breadcrumb-item active" aria-current="page">الكهربائيات</li>
+              <li class="breadcrumb-item active" aria-current="page">الادوات المنزلية</li>
             </ol>
           </nav>
 				</div>
@@ -21,17 +21,17 @@
   <div class="container">
   <div class="row">
     <div class="col">
-                @if(count($electrics) > 0)
+                @if(count($houses) > 0)
                 <ul>
                
-                @foreach($electrics as $electric)
-                <a href="{{ route('electrics.show', ['electric' => $electric['id']]) }}">
+                @foreach($houses as $house)
+                <a href="{{ route('houses.show', ['house' => $house['id']]) }}">
                 <li>
                 <div class="card border-0" style="width: 15rem;">
-                  <img class="card-img-top" src="{{ '/uploads/' . data_get($electric,"image.0") }}" >
+                  <img class="card-img-top" src="{{ '/uploads/' . data_get($house,"image.0") }}" >
                   <div class="card-body">
-                    <h5 class="card-title"> أسم المنتج: {{ $electric->name }}</h5>
-                    <p class="card-text"> السعر: {{ $electric->price }} YER</p>
+                    <h5 class="card-title"> أسم المنتج: {{ $house->name }}</h5>
+                    <p class="card-text"> السعر: {{ $house->price }} YER</p>
                   </div>
                 </div>
                 </li>
@@ -39,7 +39,7 @@
                 @endforeach
                 </ul>
                 @else
-                <p>There are no Electric to display.</p>
+                <p>There are no House to display.</p>
                 @endif
     </div>
   </div>

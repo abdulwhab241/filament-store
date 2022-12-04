@@ -25,7 +25,8 @@ class ElectricResource extends Resource
 {
     protected static ?string $model = Electric::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-lightning-bolt';
+    protected static ?string $navigationGroup = 'Add Products';
 
     public static function form(Form $form ): Form 
     {

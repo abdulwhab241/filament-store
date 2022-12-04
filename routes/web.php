@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ElectricController;
+use App\Http\Controllers\ElectronicController;
+use App\Http\Controllers\HouseController;
+use App\Http\Controllers\MedicalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 use App\Http\Controllers\ProfileController;
@@ -19,6 +22,10 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', [StaticController::class, 'index']) -> name('home.index');
 Route::get('/call', [StaticController::class, 'call']) -> name('home.call');
 Route::resource('electrics', ElectricController::class);
+Route::resource('electronics', ElectronicController::class);
+Route::resource('houses', HouseController::class);
+Route::resource('medicals', MedicalController::class);
+
 /*
 Route::get('/electric', [StaticController::class, 'electric']) -> name('home.electric');
 Route::get('/electronic', [StaticController::class, 'electronic']) -> name('home.electronic');

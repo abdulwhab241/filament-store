@@ -12,8 +12,8 @@
 
 
 
-      @if(count(data_get($electric,'image')??[]))
-      @foreach(data_get($electric,'image') as $image)
+      @if(count(data_get($house,'image')??[]))
+      @foreach(data_get($house,'image') as $image)
         <img src="{{ '/uploads/' . $image }}" class="img-fluid rounded-start" style="padding: 5px;">
       @endforeach
       @endif
@@ -21,9 +21,9 @@
     </div>
     <div class="col-md-8">
       <div class="card-body" style="padding: 5px;">
-        <h5 class="card-title" style="float: right;"> أسم المنتج: {{ $electric['name'] }}</h5>
-        <p class="card-text" style="font-weight: bold;  margin-top: 15px; float: right;"> {{ $electric['disc'] }}</p>
-        <p class="card-text" style="color: blue; font-weight: bold; float: right;">السعر: {{ $electric['price'] }} YER </p>
+        <h5 class="card-title" style="float: right;"> أسم المنتج: {{ $house['name'] }}</h5>
+        <p class="card-text" style="font-weight: bold;  margin-top: 15px; float: right;"> {{ $house['disc'] }}</p>
+        <p class="card-text" style="color: blue; font-weight: bold; float: right;">السعر: {{ $house['price'] }} YER </p>
       </div>
     </div>
     <a href='#'  class="btn btn-outline-info btn-lg btn-block"  style="cursor: pointer; border: none; margin: 10px; font-weight: bold;">إضافة الى السلة</a>

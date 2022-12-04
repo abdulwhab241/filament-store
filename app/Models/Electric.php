@@ -15,14 +15,11 @@ class Electric extends Model
         'price',
         'image'
     ];
-   
+
     
     protected $casts = [
         'image' => 'array',
     ];
-   
 
-
-    
 
 }
