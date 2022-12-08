@@ -25,7 +25,7 @@ class MedicalResource extends Resource
     protected static ?string $model = Medical::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
-    protected static ?string $navigationGroup = 'Add Products';
+    protected static ?string $navigationGroup = 'Products Management';
 
     public static function form(Form $form): Form
     {
@@ -37,12 +37,15 @@ class MedicalResource extends Resource
                 ->required()
                 ->maxLength(255),
                 FileUpload::make('image')
+                ->required()
                 ->multiple()
                 ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
-                    return "images/house/".Str::random(15).".".$file->getClientOriginalExtension();
+                    return "images/medical/".Str::random(15).".".$file->getClientOriginalExtension();
                 }),
                 Textarea::make('disc'),
                 TextInput::make('price')
+                ->required()
+                ->integer()
             ])
         ]);
     }
@@ -51,7 +54,7 @@ class MedicalResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name') -> searchable(),
+                TextColumn::make('name')->sortable() -> searchable(),
                 TextColumn::make('disc')->limit(1000000),
                 TextColumn::make('price')->money('YER'),
                 TextColumn::make('created_at')->dateTime()

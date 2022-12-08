@@ -23,14 +23,14 @@
     <div class="col">
                 @if(count($houses) > 0)
                 <ul>
-               
+              
                 @foreach($houses as $house)
                 <a href="{{ route('houses.show', ['house' => $house['id']]) }}">
                 <li>
                 <div class="card border-0" style="width: 15rem;">
                   <img class="card-img-top" src="{{ '/uploads/' . data_get($house,"image.0") }}" >
                   <div class="card-body">
-                    <h5 class="card-title"> أسم المنتج: {{ $house->name }}</h5>
+                    <h5 class="card-title"> {{ $house->name }}</h5>
                     <p class="card-text"> السعر: {{ $house->price }} YER</p>
                   </div>
                 </div>

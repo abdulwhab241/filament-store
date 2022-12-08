@@ -20,13 +20,14 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ElectricResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ElectricResource\RelationManagers;
+use App\Filament\Resources\ElectricResource\Widgets\ElectricStatsOverview;
 
 class ElectricResource extends Resource
 {
     protected static ?string $model = Electric::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-lightning-bolt';
-    protected static ?string $navigationGroup = 'Add Products';
+    protected static ?string $navigationGroup = 'Products Management';
 
     public static function form(Form $form ): Form 
     {
@@ -38,12 +39,15 @@ class ElectricResource extends Resource
                     ->required()
                     ->maxLength(255),
                     FileUpload::make('image')
+                    ->required()
                     ->multiple()
                     ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
                         return "images/electric/".Str::random(15).".".$file->getClientOriginalExtension();
                     }),
                     Textarea::make('disc'),
                     TextInput::make('price')
+                    ->required()
+                    ->integer()
                 ])
             ]);
     }
@@ -53,7 +57,7 @@ class ElectricResource extends Resource
         return $table
             ->columns([
 
-                    TextColumn::make('name') -> searchable(),
+                    TextColumn::make('name')->sortable() -> searchable(),
                     TextColumn::make('disc')->limit(1000000),
                     TextColumn::make('price')->money('YER'),
                     TextColumn::make('created_at')->dateTime()
@@ -73,6 +77,13 @@ class ElectricResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            ElectricStatsOverview::class,
         ];
     }
     

@@ -45,8 +45,7 @@
                   <li class="nav-item"><a class="nav-link" href="{{ route('electrics.index') }}">الكهربائيات ⚡</a></li>
                   <li class="nav-item"><a class="nav-link" href="{{ route('houses.index') }}"> الادوات المنزلية 🏠</a></li>
                   <li class="nav-item"><a class="nav-link" href="{{ route('medicals.index') }}"> الطبية 🏥</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#"> الجديد🤩 </a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('moderns.index') }}"> الجديد🤩 </a></li>
                 </ul>
 							</li>
               
@@ -206,6 +205,17 @@
 
 </section>
 
+<section>
+  <h1 style="color: blue; font-weight: bold; font-size:larger; background-color:#F1F6F7; text-align:center; margin-top: 10px;">
+  اقوى عروض الالكترونيات والكهربائيات والادوات المنزلية والطبية وجميع المنتجات الجديدة من أوول نيو ورك 
+  <marquee direction="right">
+        <p style="font-weight: bold; font-size:larger; color:black; margin-top: 25px;">
+         مكيفات _ دفايات _ سرويسات _ سخانات و غلايات ماء _ كاميرات  _ توربينات _  طباخات طاقة شمسية _ مساجات _ مستلزمات سيارات _ ادوات منزلية _ اكسسوارات _ لمبات انارة الشوارع 
+        </p>
+        <p style="font-weight: bold; font-size:larger; color:black; margin-top: 25px;">اطلب يصلك طلبك لباب بيتك (خدمة توصيل بصنعاء وجميع المحافظات)</p> 
+  </marquee>
+  </h1>
+  </section>
 
   </main>
   @yield('Page')

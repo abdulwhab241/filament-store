@@ -39,8 +39,7 @@
     <a href="{{ route('electrics.index') }}">الكهربائيات ⚡</a> / 
     <a href="{{ route('houses.index') }}"> الادوات المنزلية 🏠</a> / 
     <a href="{{ route('medicals.index') }}"> الطبية 🏥</a> / 
-    <a href="#"> الجديد🤩 </a>
+    <a href="{{ route('moderns.index') }}"> الجديد🤩 </a>
   </h6>
- 
 </section>
 @endsection

@@ -21,7 +21,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body" style="padding: 5px;">
-        <h5 class="card-title" style="float: right;"> أسم المنتج: {{ $electric['name'] }}</h5>
+        <h5 class="card-title" style="float: right;"> {{ $electric['name'] }}</h5>
         <p class="card-text" style="font-weight: bold;  margin-top: 15px; float: right;"> {{ $electric['disc'] }}</p>
         <p class="card-text" style="color: blue; font-weight: bold; float: right;">السعر: {{ $electric['price'] }} YER </p>
       </div>
@@ -39,8 +39,7 @@
     <a href="{{ route('electrics.index') }}">الكهربائيات ⚡</a> / 
     <a href="{{ route('houses.index') }}"> الادوات المنزلية 🏠</a> / 
     <a href="{{ route('medicals.index') }}"> الطبية 🏥</a> / 
-    <a href="#"> الجديد🤩 </a>
+    <a href="{{ route('moderns.index') }}"> الجديد🤩 </a>
   </h6>
- 
 </section>
 @endsection

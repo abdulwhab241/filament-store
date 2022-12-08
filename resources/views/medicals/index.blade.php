@@ -23,14 +23,14 @@
     <div class="col">
                 @if(count($medicals) > 0)
                 <ul>
-               
+            
                 @foreach($medicals as $medical)
                 <a href="{{ route('medicals.show', ['medical' => $medical['id']]) }}">
                 <li>
                 <div class="card border-0" style="width: 15rem;">
                   <img class="card-img-top" src="{{ '/uploads/' . data_get($medical,"image.0") }}" >
                   <div class="card-body">
-                    <h5 class="card-title"> أسم المنتج: {{ $medical->name }}</h5>
+                    <h5 class="card-title">  {{ $medical->name }}</h5>
                     <p class="card-text"> السعر: {{ $medical->price }} YER</p>
                   </div>
                 </div>

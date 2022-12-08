@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ElectricResource\Pages;
 
 use App\Filament\Resources\ElectricResource;
+use App\Filament\Resources\ElectricResource\Widgets\ElectricStatsOverview;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
@@ -15,5 +16,12 @@ class ListElectrics extends ListRecords
         return [
             Actions\CreateAction::make(),
         ];
+    }
+    
+    protected function getHeaderWidgets(): array
+    {
+            return [
+            ElectricStatsOverview::class,  
+            ];
     }
 }

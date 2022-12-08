@@ -4,6 +4,7 @@ use App\Http\Controllers\ElectricController;
 use App\Http\Controllers\ElectronicController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\MedicalController;
+use App\Http\Controllers\ModernController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +26,7 @@ Route::resource('electrics', ElectricController::class);
 Route::resource('electronics', ElectronicController::class);
 Route::resource('houses', HouseController::class);
 Route::resource('medicals', MedicalController::class);
+Route::resource('moderns', ModernController::class);
 
 /*
 Route::get('/electric', [StaticController::class, 'electric']) -> name('home.electric');

@@ -1,24 +1,14 @@
 @extends('layout')
 @section('title', 'الرئيسية')
 @section('Page')
-<section>
-<h1 style="color: blue; font-weight: bold; font-size:larger; background-color:#F1F6F7; text-align:center; margin-top: 10px;">
-اقوى عروض الالكترونيات والكهربائيات والادوات المنزلية والطبية وجميع المنتجات الجديدة من أوول نيو ورك 
-<marquee direction="right">
-      <p style="font-weight: bold; font-size:larger; color:black; margin-top: 25px;">
-       مكيفات _ دفايات _ سرويسات _ سخانات و غلايات ماء _ كاميرات  _ توربينات _  طباخات طاقة شمسية _ مساجات _ مستلزمات سيارات _ ادوات منزلية _ اكسسوارات _ لمبات انارة الشوارع 
-      </p>
-      <p style="font-weight: bold; font-size:larger; color:black; margin-top: 25px;">اطلب يصلك طلبك لباب بيتك (خدمة توصيل بصنعاء وجميع المحافظات)</p> 
-</marquee>
-</h1>
-</section>
+
 
 
 <section style="margin-top: 20px; margin-bottom: 20px;">
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-4 col-lg-4" >   
-    <a href="#" style="text-align: right;">
+    <a href="{{ route('electronics.index') }}" style="text-align: right;">
         <div class="card border-0" style="width: 18rem;">
         <img src="image/home/ELIC.jpg" class="rounded-circle img-thumbnail border-0" alt="...">
         <div class="card-body">
@@ -29,7 +19,7 @@
     </a>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4" style="margin-top: 10px;">
-    <a href="#" style="text-align: right;">
+    <a href="{{ route('electrics.index') }}" style="text-align: right;">
         <div class="card border-0" style="width: 18rem;">
         <img src="image/home/Elictrce.jpg" class="rounded-circle img-thumbnail border-0" alt="...">
         <div class="card-body">
@@ -40,7 +30,7 @@
     </a>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4" style="margin-top: 10px;">
-    <a href="#" style="text-align: right;">
+    <a href="{{ route('houses.index') }}" style="text-align: right;">
         <div class="card border-0" style="width: 18rem;">
         <img src="image/home/House.jpg" class="rounded-circle img-thumbnail border-0" alt="...">
         <div class="card-body">
@@ -53,7 +43,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6" style="margin-top: 10px;">
-    <a href="#" style="text-align: right;">
+    <a href="{{ route('medicals.index') }}" style="text-align: right;">
         <div class="card border-0" style="width: 18rem;">
         <img src="image/home/DOC.jpg" class="rounded-circle img-thumbnail border-0" alt="...">
         <div class="card-body">
@@ -64,7 +54,7 @@
     </a>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6" style="margin-top: 10px;">
-    <a href="#" style="text-align: right;">
+    <a href="{{ route('moderns.index') }}" style="text-align: right;">
         <div class="card border-0" style="width: 18rem;">
         <img src="image/home/New.jpg" class="rounded-circle img-thumbnail border-0" alt="...">
         <div class="card-body">

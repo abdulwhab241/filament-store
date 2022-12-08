@@ -1,16 +1,16 @@
 @extends('layout')
-@section('title', ' الالكترونيات')
+@section('title', ' الجديد')
 @section('Page')
 <link rel="stylesheet" href="css/Elec.css">
     <section class="blog-banner-area" id="contact">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>الالكترونيات</h1>
+					<h1>الجديد</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{ route('home.index') }}">الرئيسية</a></li>
-              <li class="breadcrumb-item active" aria-current="page">الالكترونيات</li>
+              <li class="breadcrumb-item active" aria-current="page">الجديد</li>
             </ol>
           </nav>
 				</div>
@@ -21,17 +21,17 @@
   <div class="container">
   <div class="row">
     <div class="col">
-                @if(count($electronics) > 0)
+                @if(count($moderns) > 0)
                 <ul>
               
-                @foreach($electronics as $electronic)
-                <a href="{{ route('electronics.show', ['electronic' => $electronic['id']]) }}">
+                @foreach($moderns as $modern)
+                <a href="{{ route('moderns.show', ['modern' => $modern['id']]) }}">
                 <li>
                 <div class="card border-0" style="width: 15rem;">
-                  <img class="card-img-top" src="{{ '/uploads/' . data_get($electronic,"image.0") }}" >
+                  <img class="card-img-top" src="{{ '/uploads/' . data_get($modern,"image.0") }}" >
                   <div class="card-body">
-                    <h5 class="card-title"> {{ $electronic->name }}</h5>
-                    <p class="card-text"> السعر: {{ $electronic->price }} YER</p>
+                    <h5 class="card-title">  {{ $modern->name }}</h5>
+                    <p class="card-text"> السعر: {{ $modern->price }} YER</p>
                   </div>
                 </div>
                 </li>
@@ -39,7 +39,7 @@
                 @endforeach
                 </ul>
                 @else
-                <p>There are no Electronic to display.</p>
+                <p>There are no Modern to display.</p>
                 @endif
     </div>
   </div>
