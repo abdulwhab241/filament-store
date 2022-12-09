@@ -8,6 +8,7 @@ use App\Http\Controllers\ModernController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+Route::get('/test', function () {
 
+    clear_cart();
+
+
+    add_product_to_cart(3, 15);
+
+
+
+
+
+
+    return get_cart();
+
+    
+    $user = User::first();
+    // $user->wallet->deposit(100);
+    if($user->wallet->canWithdraw(90)){
+        $user->wallet->withdraw(90);
+        return "done";
+
+    }else{
+        return "no balance";
+    }
+
+    return $user->wallet->balance;
+});
 Route::get('/hash', function () {
     return bcrypt('admin');
 });
